@@ -1,2 +1,1 @@
-def getlog():
-    return "Log coming soon"
+from gitlog import getlog

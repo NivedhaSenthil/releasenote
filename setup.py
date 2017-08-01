@@ -8,4 +8,11 @@ setup(name='releasenote',
       author_email='nivedhasenthil@gmail.com',
       license='MIT',
       packages=['releasenote'],
+      install_requires=[
+          'Click',
+      ],
+      entry_points='''
+        [console_scripts]
+        releasenote=releasenote.gitlog:getlog
+    ''',
       zip_safe=False)
