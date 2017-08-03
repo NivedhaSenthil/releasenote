@@ -1,6 +1,6 @@
-from subprocess import check_output
+import subprocess
 
 def get_log(lastcommit,committill):
     if(lastcommit):
-        return check_output(["git", "log","--oneline",lastcommit+".."+committill])
-    return check_output(["git","log","--oneline",committill])
+        return subprocess.check_output(["git", "log","--oneline",lastcommit+".."+committill])
+    return subprocess.check_output(["git","log","--oneline",committill])
