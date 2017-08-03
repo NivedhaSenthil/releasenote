@@ -13,6 +13,6 @@ setup(name='releasenote',
       ],
       entry_points='''
         [console_scripts]
-        releasenote=releasenote.gitlog:getlog
+        releasenote=releasenote.__init__:get_release_note
     ''',
       zip_safe=False)
