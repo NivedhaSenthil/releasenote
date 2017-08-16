@@ -1,8 +1,8 @@
 import click
-
 import git
-import log_parser
+import parser
 import mingle
+
 
 
 @click.command()
@@ -10,7 +10,7 @@ import mingle
 @click.option('--committill', '-ct', default="", help="Commit hash of till which notes has to generated")
 def get_release_note(lastcommit,committill):
     commit_log = git.get_log(lastcommit,committill)
-    click.echo(commit_log)
-    card_nos = log_parser.parse(commit_log)
+    card_nos = parser.parse_log(commit_log)
     card_details = mingle.get_cards_title("your_first_project", card_nos, "nivedhas", "1qaz!QAZ")
-    click.echo(card_details[0].content)
+    change_log = parser.parse_card_title(card_details)
+    click.echo("\n".join(change_log))
