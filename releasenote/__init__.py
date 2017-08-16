@@ -1,6 +1,9 @@
 import click
+
 import git
 import log_parser
+import mingle
+
 
 @click.command()
 @click.option('--lastcommit', '-lc', default="", help="Commit hash of last release")
@@ -9,3 +12,5 @@ def get_release_note(lastcommit,committill):
     commit_log = git.get_log(lastcommit,committill)
     click.echo(commit_log)
     card_nos = log_parser.parse(commit_log)
+    card_details = mingle.get_cards_title("your_first_project", card_nos, "nivedhas", "1qaz!QAZ")
+    click.echo(card_details[0].content)
