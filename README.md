@@ -32,9 +32,13 @@ story-number has to be same as the one agile tracker
 ## Options
 
   -lc, --lastcommit TEXT  Commit hash of last release
+  
   -ct, --committill TEXT  Commit hash of till which notes has to generated
+  
   --project TEXT          Agile tracker(eg. mingle) project name
+  
   --name TEXT             Agile tracker(eg. mingle) username
+  
   --password TEXT         Agile tracker(eg.mingle) password
 
 ## Example
