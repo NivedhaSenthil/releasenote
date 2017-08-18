@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='releasenote',
-      version='0.1',
+      version='1.0',
       description='Gives release note using git commit message and mingle cards',
       url='https://github.com/NivedhaSenthil/releasenote',
       author='Nivedha Senthil',
@@ -9,7 +9,7 @@ setup(name='releasenote',
       license='MIT',
       packages=['releasenote'],
       install_requires=[
-          'Click',
+          'Click','requests',
       ],
       entry_points='''
         [console_scripts]
