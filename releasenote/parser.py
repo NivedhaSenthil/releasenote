@@ -1,10 +1,10 @@
 from xml.etree.ElementTree import XML
 
 def parse_log(log):
-    card_nos = []
+    card_nos = set([])
     for line in log.split('\n'):
         if line.strip() != '':
-            card_nos.append(line.split(' ')[1])
+            card_nos.add(line.split(' ')[1])
     return card_nos
 
 
