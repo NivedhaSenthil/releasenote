@@ -19,7 +19,6 @@ class TestGit(TestCase):
             git.get_log('first_commit', 'second_commit')
         output = sys.stdout.getvalue().strip()
         self.assertEqual(cm.exception.code, 1)
-        self.assertEquals(output,"Move into the repository location for which log has to be generated")
 
 if __name__ == "__main__":
     main()
