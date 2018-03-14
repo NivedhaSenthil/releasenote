@@ -1,5 +1,5 @@
 
-import sys
+import subprocess
 from mock import patch
 from unittest import TestCase, main
 from releasenote import git
@@ -14,10 +14,11 @@ class TestGit(TestCase):
         self.assertTrue(mock_co.called)
         self.assertEquals(commit_log,"commit log")
 
-    def test_location_exception(self):
+    @patch('subprocess.check_output')
+    def test_location_exception(self,mock_co):
+        mock_co.side_effect = subprocess.CalledProcessError(1,'check_output')
         with self.assertRaises(SystemExit) as cm:
             git.get_log('first_commit', 'second_commit')
-        output = sys.stdout.getvalue().strip()
         self.assertEqual(cm.exception.code, 1)
 
 if __name__ == "__main__":
