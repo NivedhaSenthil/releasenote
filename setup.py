@@ -9,7 +9,7 @@ setup(name='releasenote',
       license='MIT',
       packages=['releasenote'],
       install_requires=[
-          'Click','requests',
+          'Click','requests','mock'
       ],
       entry_points='''
         [console_scripts]
