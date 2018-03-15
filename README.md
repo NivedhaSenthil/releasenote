@@ -1,4 +1,7 @@
 # releasenote
+
+[![CircleCI](https://circleci.com/gh/NivedhaSenthil/releasenote.svg?style=svg)](https://circleci.com/gh/NivedhaSenthil/releasenote)
+
 Releasenote is a python library used to get change log between given two git commits linking the story card number specified in the commit message with agile tracker (eg. Mingle). It is a command line tool built using python click library. 
 
 ## Install
